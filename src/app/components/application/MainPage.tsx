@@ -1,14 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import React from 'react';
 import styles from './MainPage.module.scss';
 import { Container } from '../generic/Container/Container';
 import Image from 'next/image';
 import mentor from '../../../../public/mentor.png';
+import mentor2 from '../../../../public/mentor 2.png';
 import { ConsultationButton } from '../generic/ConsultationButton/ConsultationButton';
 import { Card } from '../generic/Card/Card';
 import Contacts from '../generic/contacts/Contacts';
-import { useState } from 'react';
+import { useState, KeyboardEvent, EventHandler } from 'react';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { clsx } from 'clsx';
+import { Header } from '../generic/Header/Header';
 
 type MainPagePropsType = {
   gbrCourse: number;
@@ -26,11 +30,18 @@ export const MainPage: React.FC<MainPagePropsType> = ({ gbrCourse }) => {
 
   const formMenuHandler = () => {
     setIsFormOpen(false);
+    enablePageScroll();
   };
 
   const gratitudeHandler = (toggle: boolean) => {
-    // alert('isGratitude');
     setIsGratitude(toggle);
+  };
+
+  const handleKeyDown: EventHandler<KeyboardEvent<HTMLDivElement>> = (event) => {
+    if (event.key === 'Escape' || event.keyCode === 27) {
+      setIsFormOpen(false);
+      enablePageScroll();
+    }
   };
 
   const blur = clsx(styles.container, {
@@ -39,23 +50,47 @@ export const MainPage: React.FC<MainPagePropsType> = ({ gbrCourse }) => {
 
   return (
     <Container>
-      <div className={blur}>
+      <Header isFormOpen={isFormOpen} />
+      <div
+        className={blur}
+        onKeyDown={(e) => {
+          handleKeyDown(e);
+        }}
+      >
         <main className={styles.main}>
           <h1 className={styles.title}>СОЗДАЮ УСЛОВИЯ ДЛЯ ВАШЕГО УСПЕХА</h1>
           <p className={styles.comment}>
             Когда ваше время и энергия лучше сфокусированы, стремление к новым возможностям становится реальностью, ваш
             успех зависит от ваших действий
           </p>
+          <p className={styles.commentMobile}>Ваш успех зависит от ваших действий</p>
           <div className={styles.consultationContainer}>
             <div
+              data-scroll-lock-scrollable
               className={styles.marginContainer}
               onClick={() => {
                 setIsFormOpen(true);
+                disablePageScroll();
               }}
             >
-              <ConsultationButton description={'Записаться на консультацию'} isRecord />
+              <ConsultationButton
+                description={'Записаться на консультацию'}
+                descriptionMobile={'Записаться'}
+                isRecord
+                isButton
+              />
             </div>
-            <ConsultationButton description={'Бесплатная консультация'} />
+            <div
+              onClick={() => {
+                alert(`Don't touch me at all 😑`);
+              }}
+            >
+              <ConsultationButton
+                description={'Бесплатная консультация'}
+                descriptionMobile={'Заказать звонок'}
+                isButton
+              />
+            </div>
           </div>
           <div className={styles.fetchDataContainer}>
             <div className={styles.item}>
@@ -67,6 +102,7 @@ export const MainPage: React.FC<MainPagePropsType> = ({ gbrCourse }) => {
           </div>
         </main>
         <Image src={mentor} className={styles.mentorImage} alt={`mentor`} fill={false} priority={true} />
+        <Image src={mentor2} className={styles.mentor2Image} alt={`mentor`} fill={false} priority={true} />
       </div>
       <Contacts
         open={isFormOpen}

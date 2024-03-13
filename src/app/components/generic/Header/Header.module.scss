@@ -8,6 +8,9 @@
   justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 175px;
+  transition:
+    opacity 0.75s,
+    filter 0.75s;
 
   @media screen and (max-width: $desktop) {
     margin-bottom: 125px;
@@ -16,6 +19,17 @@
   @media screen and (max-width: 900px) {
     margin-bottom: 50px;
   }
+
+  @media screen and (max-width: $table) {
+    margin-bottom: 65px;
+    margin-top: 20px;
+  }
+}
+
+.blur {
+  opacity: 0.5;
+  filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -27,6 +41,11 @@
   @media screen and (max-width: $desktop) {
     margin-right: 0;
     width: 10%;
+  }
+
+  @media screen and (max-width: $table) {
+    width: fit-content;
+    height: 30px;
   }
 }
 
@@ -43,9 +62,14 @@
     width: 60%;
   }
 
+  @media screen and (max-width: $table) {
+    display: none;
+  }
+
   .navItem {
     color: rgba($white-color, 0.5);
     letter-spacing: -0.5px;
+    transition: color 0.5s;
 
     @media screen and (max-width: $desktop) {
       font-size: 14px;
@@ -54,15 +78,41 @@
     @media screen and (max-width: 900px) {
       font-size: 12px;
     }
+
+    &:hover {
+      color: $white-color;
+    }
   }
 }
 
 .contactsContainer {
   display: flex;
   align-items: center;
+  transition: color 0.5s;
 
   @media screen and (max-width: $desktop) {
     width: 22.5%;
+  }
+
+  @media screen and (max-width: $table) {
+    justify-content: space-between;
+    width: 20vw;
+  }
+
+  @media screen and (max-width: 574px) {
+    width: 25vw;
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 35vw;
+  }
+
+  .menuImage {
+    display: none;
+
+    @media screen and (max-width: $table) {
+      display: block;
+    }
   }
 
   .phoneImage {
@@ -73,6 +123,11 @@
     @media screen and (max-width: $desktop) {
       width: 15%;
     }
+
+    @media screen and (max-width: $table) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .phone {
@@ -80,9 +135,18 @@
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.5px;
+    transition: color 0.5s;
 
     @media screen and (max-width: $desktop) {
       font-size: 14px;
+    }
+
+    @media screen and (max-width: $table) {
+      display: none;
+    }
+
+    &:hover {
+      color: rgba($white-color, 0.85);
     }
   }
 }

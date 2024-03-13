@@ -2,7 +2,6 @@ import React from 'react';
 import type { Metadata } from 'next';
 import './styles/globals.scss';
 import { RalewayFont } from './fonts';
-import { Header } from './components/generic/Header/Header';
 import { clsx } from 'clsx';
 import styles from './layout.module.scss';
 
@@ -18,10 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(RalewayFont.className, styles.layout)}>
-        <Header />
-        {children}
-      </body>
+      <body className={clsx(RalewayFont.className, styles.layout)}>{children}</body>
     </html>
   );
 }

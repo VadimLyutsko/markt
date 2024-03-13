@@ -48,6 +48,12 @@
   @media screen and (max-width: 900px) {
     margin-bottom: 25px;
   }
+
+  @media screen and (max-width: $table) {
+    font-size: 4.85vw;
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
 }
 
 .mentorImage {
@@ -70,14 +76,28 @@
   }
 
   @media screen and (max-width: 1100px) {
-    width: 65vw;
+    width: 37vw;
     margin-right: -4.5%;
   }
 
   @media screen and (max-width: 900px) {
-    margin-top: 0;
-    width: 45vw;
+    margin-top: -5%;
+    width: 40vw;
     margin-right: -1.5%;
+  }
+
+  @media screen and (max-width: $table) {
+    display: none;
+  }
+}
+
+.mentor2Image {
+  display: none;
+
+  @media screen and (max-width: $table) {
+    display: block;
+    margin-right: -4%;
+    width: 100%;
   }
 }
 
@@ -111,9 +131,22 @@
 
   @media screen and (max-width: 900px) {
     max-width: 85%;
-
     margin-bottom: 25px;
   }
+
+  @media screen and (max-width: $table) {
+    display: none;
+  }
+}
+
+.commentMobile {
+  color: rgba($white-color, 0.25);
+  border-left: 1px solid $white-color;
+  padding-left: 5px;
+  // max-width: 85%;
+  margin-bottom: 50px;
+  line-height: 150%;
+  font-size: 4.75vw;
 }
 
 .consultationContainer {
@@ -128,6 +161,10 @@
     flex-direction: column;
     max-width: 65%;
     margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: $table) {
+    max-width: 75%;
   }
 }
 

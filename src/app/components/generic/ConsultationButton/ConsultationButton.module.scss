@@ -2,6 +2,8 @@
 
 .buttonContainer {
   display: flex;
+  cursor: pointer;
+  width: 100%;
 
   @media screen and (max-width: $desktop) {
     align-items: center;
@@ -27,8 +29,33 @@
   }
 
   @media screen and (max-width: 900px) {
-    font-size: 1.75vw;
+    font-size: 1.5vw;
     width: 75%;
+  }
+
+  @media screen and (max-width: $table) {
+    display: none;
+  }
+}
+
+.descriptionMobile {
+  display: none;
+  color: $text-color;
+  font-size: 2vw;
+  padding: 15px;
+
+  @media screen and (max-width: $table) {
+    display: block;
+    width: 75%;
+  }
+
+  @media screen and (max-width: 574px) {
+    font-size: 2vw;
+    width: 85%;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 5px;
   }
 }
 
@@ -36,7 +63,8 @@
   background-color: $white-color;
   color: $black-color;
 
-  .description {
+  .description,
+  .descriptionMobile {
     border-right: 2px solid $text-color;
   }
 
@@ -50,7 +78,8 @@
   color: $white-color;
   border: 1px solid $white-color;
 
-  .description {
+  .description,
+  .descriptionMobile {
     color: $white-color;
     border-right: 2px solid $white-color;
   }
@@ -75,5 +104,11 @@
 
   @media screen and (max-width: 900px) {
     padding-left: 45px;
+  }
+
+  @media screen and (max-width: $table) {
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 10px;
   }
 }

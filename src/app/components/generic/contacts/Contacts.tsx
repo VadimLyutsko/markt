@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import styles from './Contacts.module.scss';
@@ -7,12 +8,14 @@ import SVG from 'react-inlinesvg';
 
 type ContactsType = {
   open: boolean;
-  handleClose?: () => void;
+  handleClose: () => void;
   gratitudeHandler: (toggle: boolean) => void;
   isGratitude: boolean;
 };
 
 const Contacts: React.FC<ContactsType> = ({ open, handleClose, gratitudeHandler, isGratitude }) => {
+  // const [isOpen, setIsOpen] = useState(true);
+
   const placeholders = {
     firstName: 'Имя',
     phoneNumber: 'Телефон',
@@ -29,7 +32,6 @@ const Contacts: React.FC<ContactsType> = ({ open, handleClose, gratitudeHandler,
   });
 
   return (
-    // data-scroll-lock-scrollable
     <div className={contactsClass}>
       <header className={styles.header}>
         <button className={styles.button} onClick={handleClose}></button>

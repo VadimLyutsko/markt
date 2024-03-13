@@ -6,6 +6,7 @@ import InputMask from 'react-input-mask';
 import styles from './ContactForm.module.scss';
 import { validationSchema } from '@/app/common/validates/validates';
 import { ConsultationButton } from '../../ConsultationButton/ConsultationButton';
+import { MontserratFont } from '@/app/fonts';
 
 export type ContactFormType = {
   placeholders: {
@@ -37,10 +38,10 @@ export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTit
 
   const onSubmit = (data: SubmitType) => {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    // reset();
     reset({
       firstName: '',
       phoneNumber: 'luo',
+      // обе строки выше необходимы для очистки масок
     });
   };
 
@@ -57,13 +58,13 @@ export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTit
         <input
           autoComplete="off"
           placeholder={placeholders['firstName']}
-          className={styles.nickName}
+          className={clsx(styles.nickName, MontserratFont.className)}
           {...register('firstName')}
         />
       </label>
-      {errors.firstName && <p className={styles.errorBlock}>{errors.firstName?.message}</p>}
-
-      {/* Ниже валидация номера с маской (криво дизейблится, но работает, нужно поколупать) */}
+      {errors.firstName && (
+        <p className={clsx(styles.errorBlock, MontserratFont.className)}>{errors.firstName?.message}</p>
+      )}
 
       <label>
         <InputMask
@@ -71,17 +72,19 @@ export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTit
           mask="+7 ( 999 ) 999-9999"
           placeholder={placeholders['phoneNumber']}
           {...register('phoneNumber')}
-          className={styles.phone}
+          className={clsx(styles.phone, MontserratFont.className)}
           autoComplete="off"
         ></InputMask>
       </label>
 
-      {errors.phoneNumber && <p className={styles.lastErrorBlock}>{errors.phoneNumber?.message}</p>}
+      {errors.phoneNumber && (
+        <p className={clsx(styles.lastErrorBlock, MontserratFont.className)}>{errors.phoneNumber?.message}</p>
+      )}
 
       <div className={styles.item}>
         <div className={styles.checkboxRect}>
           <input type="checkbox" id="checkbox-rect1" name="check" />
-          <label htmlFor="checkbox-rect1" className={styles.privacy}>
+          <label htmlFor="checkbox-rect1" className={clsx(styles.privacy, MontserratFont.className)}>
             Согласен на сохранение и обработку персональных данных
           </label>
         </div>
@@ -96,7 +99,7 @@ export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTit
           handler();
         }}
       >
-        <ConsultationButton description={buttonTitle} />
+        <ConsultationButton description={buttonTitle} descriptionMobile="Заказать обратный звонок" />
       </button>
     </form>
   );
