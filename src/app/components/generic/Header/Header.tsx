@@ -1,12 +1,13 @@
 import React from 'react';
-import styles from './Header.module.scss';
-import logoImage from '../../../../../public/logo.svg';
-import phoneImage from '../../../../../public/phone.svg';
-import menuImage from '../../../../../public/menu.svg';
-import SVG from 'react-inlinesvg';
-import clsx from 'clsx';
 import { MontserratFont } from '@/app/fonts';
+import phoneImage from '@public/phone.svg';
+import logoImage from '@public/logo.svg';
+import menuImage from '@public/menu.svg';
+import SVG from 'react-inlinesvg';
 import Link from 'next/link';
+import clsx from 'clsx';
+import styles from './Header.module.scss';
+
 // const
 
 export type HeaderPropsType = {

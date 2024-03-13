@@ -1,16 +1,9 @@
 import React from 'react';
-import styles from './ConsultationButton.module.scss';
-import phoneImage from '../../../../../public/arr.svg';
-
+import { ConsultationButtonPropsType } from '@/app/common/types/types';
+import phoneImage from '@public/arr.svg';
 import SVG from 'react-inlinesvg';
 import { clsx } from 'clsx';
-
-export type ConsultationButtonPropsType = {
-  description: string;
-  descriptionMobile: string;
-  isRecord?: true;
-  isButton?: true;
-};
+import styles from './ConsultationButton.module.scss';
 
 export const ConsultationButton: React.FC<ConsultationButtonPropsType> = ({
   description,

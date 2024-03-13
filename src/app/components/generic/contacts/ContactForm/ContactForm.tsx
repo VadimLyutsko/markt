@@ -1,28 +1,13 @@
 import React from 'react';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm } from 'react-hook-form';
-import clsx from 'clsx';
-import InputMask from 'react-input-mask';
-import styles from './ContactForm.module.scss';
-import { validationSchema } from '@/app/common/validates/validates';
 import { ConsultationButton } from '../../ConsultationButton/ConsultationButton';
+import { ContactFormType, SubmitType } from '@/app/common/types/types';
+import { validationSchema } from '@/app/common/validates/validates';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { MontserratFont } from '@/app/fonts';
-
-export type ContactFormType = {
-  placeholders: {
-    firstName: string;
-    phoneNumber: string;
-  };
-  buttonTitle: string;
-  gratitudeHandler: (toggle: boolean) => void;
-};
-
-export type SelectOptionType = { value: string; label: string };
-
-export type SubmitType = {
-  firstName: string;
-  phoneNumber: string;
-};
+import { useForm } from 'react-hook-form';
+import InputMask from 'react-input-mask';
+import clsx from 'clsx';
+import styles from './ContactForm.module.scss';
 
 export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTitle, gratitudeHandler }) => {
   const {
@@ -41,7 +26,7 @@ export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTit
     reset({
       firstName: '',
       phoneNumber: 'luo',
-      // обе строки выше необходимы для очистки масок
+      // обе строки выше необходимы для очистки масок (phoneNumber в данном случае)
     });
   };
 
@@ -49,7 +34,7 @@ export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTit
     gratitudeHandler(true);
     setTimeout(() => {
       gratitudeHandler(false);
-    }, 3000);
+    }, 4500);
   };
 
   return (
@@ -85,21 +70,21 @@ export const ContactForm: React.FC<ContactFormType> = ({ placeholders, buttonTit
         <div className={styles.checkboxRect}>
           <input type="checkbox" id="checkbox-rect1" name="check" />
           <label htmlFor="checkbox-rect1" className={clsx(styles.privacy, MontserratFont.className)}>
-            Согласен на сохранение и обработку персональных данных
+            {`Согласен на сохранение\nи обработку персональных данных`}
           </label>
         </div>
       </div>
 
       <button
         className={clsx(styles.formButton, {
-          [styles.dusableButton]: !isValid,
+          [styles.disableButton]: !isValid,
         })}
         disabled={!isValid}
         onClick={() => {
           handler();
         }}
       >
-        <ConsultationButton description={buttonTitle} descriptionMobile="Заказать обратный звонок" />
+        <ConsultationButton id="1" description={buttonTitle} descriptionMobile="Заказать обратный звонок" />
       </button>
     </form>
   );

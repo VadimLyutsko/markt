@@ -1,21 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+import { ContactsType } from '@/app/common/types/types';
 import { ContactForm } from './ContactForm/ContactForm';
-import styles from './Contacts.module.scss';
-import clsx from 'clsx';
-import logoImage from '../../../../../public/logo.svg';
+import logoImage from '@public/logo.svg';
 import SVG from 'react-inlinesvg';
-
-type ContactsType = {
-  open: boolean;
-  handleClose: () => void;
-  gratitudeHandler: (toggle: boolean) => void;
-  isGratitude: boolean;
-};
+import clsx from 'clsx';
+import styles from './Contacts.module.scss';
 
 const Contacts: React.FC<ContactsType> = ({ open, handleClose, gratitudeHandler, isGratitude }) => {
-  // const [isOpen, setIsOpen] = useState(true);
-
   const placeholders = {
     firstName: 'Имя',
     phoneNumber: 'Телефон',
@@ -48,7 +40,7 @@ const Contacts: React.FC<ContactsType> = ({ open, handleClose, gratitudeHandler,
             }}
           ></button>
         </header>
-        <p className={styles.gratitudeTitle}>Спасибо за заявку</p>
+        <p className={styles.gratitudeTitle}>{`Спасибо\nза заявку`}</p>
         <p className={styles.gratitudeDescription}>{'Я обязательно\nсвяжусь с вами\nв ближайшее время.'}</p>
         <div className={styles.logoContainer}>
           <SVG src={logoImage.src} title="logo-image" className={styles.logo} />

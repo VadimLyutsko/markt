@@ -9,6 +9,10 @@
   @media screen and (max-height: 900px) {
     margin-bottom: 30px;
   }
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 50px;
+  }
 }
 
 .phone {
@@ -30,16 +34,26 @@
   border-bottom: 1px solid $white-color;
   font-size: 20px;
   color: $white-color;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 12px;
+    height: 25px;
+  }
+
   &::placeholder {
     font-size: 20px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 12px;
+    }
   }
 }
 
-.privacyContainer {
-  // background-color: blueviolet;
+// .privacyContainer {
+//   // background-color: blueviolet;
 
-  // margin-bottom: 90px;
-}
+//   // margin-bottom: 90px;
+// }
 
 .privacyCheckbox {
   margin-right: 25px;
@@ -49,7 +63,7 @@
 
 .privacy {
   font-size: 16px;
-  color: $white-color;
+  color: rgba($white-color, 0.5);
   line-height: 125%;
   max-width: 75%;
   transition: color 0.5s;
@@ -62,6 +76,17 @@
     font-size: 1.25vw;
     max-width: 100%;
   }
+
+  @media screen and (max-width: $table) {
+    font-size: 2vw;
+    max-width: 75%;
+  }
+
+  @media screen and (max-width: $mobile) {
+    max-width: 100%;
+    font-size: 12px;
+    white-space: pre-line;
+  }
 }
 
 .formButton {
@@ -72,7 +97,7 @@
   }
 }
 
-.dusableButton {
+.disableButton {
   opacity: 0.2;
   cursor: default;
   &:hover {
@@ -89,6 +114,11 @@
   @media screen and (max-width: 900px) {
     font-size: 14px;
   }
+
+  @media screen and (max-width: $mobile) {
+    margin-top: -45px;
+    margin-bottom: 25px;
+  }
 }
 
 .lastErrorBlock {
@@ -100,8 +130,11 @@
   }
 
   @media screen and (max-width: $table) {
-    margin-top: -20px;
-    margin-bottom: 0;
+    margin-top: -65px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: $mobile) {
   }
 }
 
@@ -113,8 +146,6 @@
     margin-bottom: 45px;
   }
 }
-
-/* checkboxRect */
 
 .checkboxRect input[type='checkbox'] {
   display: none;
@@ -146,11 +177,15 @@
     background 0.2s ease-in-out;
   background: transparent;
   margin-top: 5px;
+
+  // @media screen and (max-width: $table) {
+  //   font-size: 5vw;
+  //   line-height: 150%;
+  // }
 }
 .checkboxRect input[type='checkbox']:checked + label:before {
   width: 1.3em;
   height: 1.3em;
-  // border-radius: 0.2em;
   border: 2px solid #fff;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);

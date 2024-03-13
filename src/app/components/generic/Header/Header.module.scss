@@ -24,6 +24,10 @@
     margin-bottom: 65px;
     margin-top: 20px;
   }
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 50px;
+  }
 }
 
 .blur {

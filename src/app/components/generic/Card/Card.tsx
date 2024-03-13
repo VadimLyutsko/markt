@@ -1,21 +1,15 @@
 import React from 'react';
-import styles from './Card.module.scss';
-import phoneImage from '../../../../../public/arr.svg';
-
-import SVG from 'react-inlinesvg';
-import { clsx } from 'clsx';
+import { CardPropsType } from '@/app/common/types/types';
 import { MontserratFont } from '@/app/fonts';
+import { clsx } from 'clsx';
+import styles from './Card.module.scss';
 
-export type CardPropsType = {
-  title: string;
-  description: string;
-};
-
-export const Card: React.FC<CardPropsType> = ({ description, title }) => {
+export const Card: React.FC<CardPropsType> = ({ description, title, mobileDescription }) => {
   return (
     <div className={styles.card}>
       <h3 className={clsx(styles.title, MontserratFont.className)}>{title}</h3>
       <p className={styles.description}>{description}</p>
+      <p className={styles.mobileDescription}>{mobileDescription}</p>
     </div>
   );
 };
