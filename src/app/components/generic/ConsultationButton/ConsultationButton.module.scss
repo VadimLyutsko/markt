@@ -1,0 +1,79 @@
+@import '../../../styles/variables.module';
+
+.buttonContainer {
+  display: flex;
+
+  @media screen and (max-width: $desktop) {
+    align-items: center;
+  }
+}
+
+.description {
+  color: $text-color;
+  font-size: 18px;
+  padding: 25px;
+
+  @media screen and (max-width: 1850px) {
+    font-size: 1.2vw;
+  }
+
+  @media screen and (max-width: $desktop) {
+    padding: 20px;
+    font-size: 1.25vw;
+  }
+
+  @media screen and (max-width: 1100px) {
+    padding: 20px 10px;
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 1.75vw;
+    width: 75%;
+  }
+}
+
+.recordButton {
+  background-color: $white-color;
+  color: $black-color;
+
+  .description {
+    border-right: 2px solid $text-color;
+  }
+
+  .consultationImage {
+    stroke: $text-color;
+    fill: transparent;
+  }
+}
+
+.freeButton {
+  color: $white-color;
+  border: 1px solid $white-color;
+
+  .description {
+    color: $white-color;
+    border-right: 2px solid $white-color;
+  }
+
+  .consultationImage {
+    stroke: $white-color;
+    fill: transparent;
+  }
+}
+
+.imageContainer {
+  padding-left: 45px;
+  padding-top: 38px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+
+  @media screen and (max-width: $desktop) {
+    padding-top: 30px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding-left: 45px;
+  }
+}

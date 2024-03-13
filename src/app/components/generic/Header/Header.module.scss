@@ -1,0 +1,88 @@
+@import '../../../styles/variables.module';
+
+.header {
+  top: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 175px;
+
+  @media screen and (max-width: $desktop) {
+    margin-bottom: 125px;
+  }
+
+  @media screen and (max-width: 900px) {
+    margin-bottom: 50px;
+  }
+}
+
+.logo {
+  padding: 10px 0;
+  border-top: 1px solid $white-color;
+  border-bottom: 1px solid $white-color;
+  margin-right: 30px;
+
+  @media screen and (max-width: $desktop) {
+    margin-right: 0;
+    width: 10%;
+  }
+}
+
+.navContainer {
+  width: 46%;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: $desktop) {
+    width: 55%;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 60%;
+  }
+
+  .navItem {
+    color: rgba($white-color, 0.5);
+    letter-spacing: -0.5px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 900px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.contactsContainer {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $desktop) {
+    width: 22.5%;
+  }
+
+  .phoneImage {
+    stroke: $white-color;
+    fill: transparent;
+    margin-right: 15px;
+
+    @media screen and (max-width: $desktop) {
+      width: 15%;
+    }
+  }
+
+  .phone {
+    color: $white-color;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    @media screen and (max-width: $desktop) {
+      font-size: 14px;
+    }
+  }
+}
