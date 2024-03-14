@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderPropsType> = ({ isFormOpen }) => {
   return (
     <header className={headerClasses}>
       <SVG src={logoImage.src} title="logo-image" className={styles.logo} />
-      <div className={styles.navContainer}>{navData}</div>
+      <nav className={styles.navContainer}>{navData}</nav>
       <Link href={`tel: 8-345-123-34-45`} className={styles.contactsContainer}>
         <SVG src={menuImage.src} title="menu" className={styles.menuImage} />
         <SVG src={phoneImage.src} title="phone-button" className={styles.phoneImage} />
