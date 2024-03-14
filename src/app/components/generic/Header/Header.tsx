@@ -8,8 +8,6 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import styles from './Header.module.scss';
 
-// const
-
 export type HeaderPropsType = {
   isFormOpen: boolean;
 };

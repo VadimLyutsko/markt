@@ -15,6 +15,8 @@ export const ConsultationButton: React.FC<ConsultationButtonPropsType> = ({
     [styles.recordButton]: isRecord,
     [styles.freeButton]: !isRecord,
   });
+
+  // Странное ветвление button/div появилось из-за сабмит-кнопки в форрме для избежания проблем с гидратацией
   return isButton ? (
     <button className={buttonClasses}>
       <p className={styles.description}>{description}</p>

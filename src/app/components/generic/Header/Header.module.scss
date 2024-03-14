@@ -16,7 +16,7 @@
     margin-bottom: 125px;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     margin-bottom: 50px;
   }
 
@@ -62,7 +62,7 @@
     width: 55%;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     width: 60%;
   }
 
@@ -79,7 +79,7 @@
       font-size: 14px;
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $breakpoint_900px) {
       font-size: 12px;
     }
 
@@ -103,7 +103,7 @@
     width: 20vw;
   }
 
-  @media screen and (max-width: 574px) {
+  @media screen and (max-width: $breakpoint_574px) {
     width: 25vw;
   }
 

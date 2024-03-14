@@ -70,13 +70,15 @@ export const MainPage: React.FC<MainPagePropsType> = ({ title, comment, commentM
     );
   });
 
+  const containerClasses = clsx(styles.container, {
+    [styles.blur]: isFormOpen,
+  });
+
   return (
     <Container>
       <Header isFormOpen={isFormOpen} />
       <div
-        className={clsx(styles.container, {
-          [styles.blur]: isFormOpen,
-        })}
+        className={containerClasses}
         onKeyDown={(e) => {
           handleKeyDown(e);
         }}

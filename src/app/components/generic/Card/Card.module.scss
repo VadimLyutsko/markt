@@ -6,20 +6,14 @@
   width: 47.3%;
   z-index: 5;
   position: relative;
-  // background-color: #fff;
 
   @media screen and (max-width: $desktop) {
     width: 50%;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     width: unset;
     padding-left: 10px;
-  }
-
-  @media screen and (max-width: $mobile) {
-    // max-width: 25%;
-    // background-color: #fff;
   }
 }
 
@@ -29,7 +23,7 @@
   color: $white-color;
   margin-bottom: 35px;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     font-size: 24px;
     margin-bottom: 15px;
   }
@@ -45,7 +39,7 @@
   color: rgba($white-color, 0.5);
   white-space: pre;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     font-size: 1.25vw;
   }
 

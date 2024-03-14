@@ -2,11 +2,11 @@
 
 .nickName {
   margin-bottom: 65px;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     margin-bottom: 30px;
   }
 
-  @media screen and (max-height: 900px) {
+  @media screen and (max-height: $breakpoint_900px) {
     margin-bottom: 30px;
   }
 
@@ -18,11 +18,11 @@
 .phone {
   margin-bottom: 110px;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     margin-bottom: 70px;
   }
 
-  @media screen and (max-height: 900px) {
+  @media screen and (max-height: $breakpoint_900px) {
     margin-bottom: 70px;
   }
 }
@@ -49,12 +49,6 @@
   }
 }
 
-// .privacyContainer {
-//   // background-color: blueviolet;
-
-//   // margin-bottom: 90px;
-// }
-
 .privacyCheckbox {
   margin-right: 25px;
   width: 25px;
@@ -68,7 +62,7 @@
   max-width: 75%;
   transition: color 0.5s;
 
-  @media screen and (max-width: 1850px) {
+  @media screen and (max-width: $breakpoint_1850px) {
     max-width: 72%;
   }
 
@@ -92,7 +86,7 @@
 .formButton {
   max-width: 75%;
 
-  @media screen and (max-width: 1850px) {
+  @media screen and (max-width: $breakpoint_1850px) {
     max-width: 100%;
   }
 }
@@ -111,7 +105,7 @@
   margin-top: -25px;
   margin-bottom: 6px;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     font-size: 14px;
   }
 
@@ -125,7 +119,7 @@
   margin-top: -65px;
   margin-bottom: 45px;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     margin-bottom: 30px;
   }
 
@@ -142,7 +136,7 @@
 
 .item {
   margin-bottom: 90px;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $breakpoint_900px) {
     margin-bottom: 45px;
   }
 }
@@ -177,11 +171,6 @@
     background 0.2s ease-in-out;
   background: transparent;
   margin-top: 5px;
-
-  // @media screen and (max-width: $table) {
-  //   font-size: 5vw;
-  //   line-height: 150%;
-  // }
 }
 .checkboxRect input[type='checkbox']:checked + label:before {
   width: 1.3em;
