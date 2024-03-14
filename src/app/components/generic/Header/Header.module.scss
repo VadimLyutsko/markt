@@ -26,7 +26,7 @@
   }
 
   @media screen and (max-width: $mobile) {
-    margin-bottom: 50px;
+    margin-bottom: 65px;
   }
 }
 
@@ -50,6 +50,14 @@
   @media screen and (max-width: $table) {
     width: fit-content;
     height: 30px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    // height: 20px;
+    width: 35%;
+    padding: 9px 0;
+    // padding-bottom: 10px;
+    // height: 25px;
   }
 }
 
@@ -111,6 +119,10 @@
     width: 35vw;
   }
 
+  @media screen and (max-width: $breakpoint_385px) {
+    width: 30vw;
+  }
+
   .menuImage {
     display: none;
 
@@ -131,6 +143,10 @@
     @media screen and (max-width: $table) {
       width: 40px;
       height: 40px;
+    }
+
+    @media screen and (max-width: $breakpoint_385px) {
+      margin-right: -0.1vw;
     }
   }
 

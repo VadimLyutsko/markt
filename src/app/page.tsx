@@ -4,7 +4,7 @@ import { MainPage } from './components/application/MainPage';
 import { getData } from './api/getData';
 
 const MainPageData = {
-  title: 'СОЗДАЮ УСЛОВИЯ ДЛЯ ВАШЕГО УСПЕХА',
+  title: 'СОЗДАЮ УСЛОВИЯ\nДЛЯ ВАШЕГО\nУСПЕХА',
   comment:
     'Когда ваше время и энергия лучше сфокусированы, стремление к новым возможностям становится реальностью, ваш успех зависит от ваших действий',
   commentMobile: 'Ваш успех зависит от ваших действий',

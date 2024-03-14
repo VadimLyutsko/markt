@@ -58,7 +58,8 @@
   @media screen and (max-width: $mobile) {
     padding: 5px;
     font-size: 3vw;
-    // width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -69,6 +70,10 @@
   .description,
   .descriptionMobile {
     border-right: 2px solid $text-color;
+
+    @media screen and (max-width: $mobile) {
+      border-right: 1px solid $text-color;
+    }
   }
 
   .consultationImage {
@@ -85,6 +90,10 @@
   .descriptionMobile {
     color: $white-color;
     border-right: 2px solid $white-color;
+
+    @media screen and (max-width: $mobile) {
+      border-right: 1px solid $white-color;
+    }
   }
 
   .consultationImage {
@@ -123,7 +132,7 @@
   }
 
   @media screen and (max-width: $mobile) {
-    padding-left: 15px;
+    padding-left: 10px;
     padding-right: 5px;
     padding-top: 10px;
     padding-bottom: 0;
